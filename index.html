@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#14201e">
+  <meta name="description" content="Yavaşla, nefes al ve TDA Calm ile huzurlu manzaraların içinde kısa bir mola ver.">
+  <title>TDA Calm — Kendine sakin bir alan aç</title>
+  <link rel="preload" as="image" href="assets/images/lake-mountains.jpg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="scene" aria-hidden="true">
+    <img id="sceneA" class="scene-image is-visible" src="assets/images/lake-mountains.jpg" alt="" fetchpriority="high" decoding="async">
+    <img id="sceneB" class="scene-image" src="" alt="" decoding="async">
+    <div class="scene-shade"></div>
+  </div>
+
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="./" aria-label="TDA Calm ana sayfa">
+        <span class="wordmark-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>TDA <strong>CALM</strong></span>
+      </a>
+      <p class="header-note">Kendine ayırdığın küçük bir mola.</p>
+    </header>
+
+    <main class="main-content">
+      <section class="welcome" aria-labelledby="welcome-title">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> YAVAŞLA · NEFES AL</p>
+        <h1 id="welcome-title">Biraz yavaşla.<br><span>Burada kal.</span></h1>
+        <p class="welcome-copy">Dünyayı birkaç dakikalığına sessize al.<br class="desktop-break"> Manzaralar değişsin, sen sadece nefesine dön.</p>
+        <p class="gentle-reminder">Burnundan nefes al · Yavaşça bırak</p>
+      </section>
+    </main>
+
+    <footer class="control-dock" aria-label="Manzara ve müzik kontrolleri">
+      <section class="gallery-controls" aria-label="Fotoğraf slayt gösterisi">
+        <div class="gallery-copy">
+          <p class="control-kicker">ŞİMDİKİ MANZARA <span class="tiny-divider" aria-hidden="true">/</span> <span id="slideCount">01 / 11</span></p>
+          <h2 id="sceneTitle" aria-live="polite">Dağ gölünün sessizliği</h2>
+        </div>
+        <div class="gallery-actions">
+          <button class="round-button" id="previousSlide" type="button" aria-label="Önceki manzara">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7"/></svg>
+          </button>
+          <button class="play-button" id="slideshowToggle" type="button" aria-pressed="true" aria-label="Fotoğraf geçişlerini duraklat">
+            <span class="button-icon" id="slideshowIcon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg>
+            </span>
+            <span id="slideshowLabel">Duraklat</span>
+          </button>
+          <button class="round-button" id="nextSlide" type="button" aria-label="Sonraki manzara">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="audio-controls" aria-label="Rahatlatıcı müzik">
+        <div class="audio-heading">
+          <div>
+            <p class="control-kicker">ARKA PLAN MÜZİĞİ</p>
+            <p class="track-name">Calm Ambient <span>· isteğe bağlı</span></p>
+          </div>
+          <button class="audio-button" id="audioToggle" type="button" aria-pressed="false" aria-label="Müziği başlat">
+            <span class="audio-button-icon" id="audioIcon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m9 6 10 6-10 6z"/></svg>
+            </span>
+            <span id="audioButtonLabel">Müziği başlat</span>
+          </button>
+        </div>
+        <div class="volume-row">
+          <label for="volumeControl">Ses seviyesi</label>
+          <input id="volumeControl" type="range" min="0" max="100" value="35" aria-label="Ses seviyesi">
+          <span id="volumeValue" class="volume-value">35%</span>
+        </div>
+        <p id="audioStatus" class="sr-only" role="status" aria-live="polite">Müzik kapalı.</p>
+      </section>
+    </footer>
+  </div>
+
+  <audio id="ambientAudio" src="assets/audio/001_Synthwave_4k.mp3" preload="none" loop></audio>
+</body>
+</html>
